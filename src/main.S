@@ -16,7 +16,7 @@
 .extern Fl_Button_set_callback
 .extern Fl_Button_set_label_color
 .extern Fl_Check_Button_new
-.extern Fl_Check_Button_set_label # we want to copy the label
+.extern Fl_Check_Button_set_label
 .extern Fl_redraw
 .extern Fl_run
 
