@@ -14,7 +14,7 @@
 .extern Fl_Input_value
 .extern Fl_Button_new
 .extern Fl_Button_set_callback
-.extern Fl_Button_set_label_color
+.extern Fl_Button_set_label_color // we want to copy the label
 .extern Fl_Check_Button_new
 .extern Fl_Check_Button_set_label
 .extern Fl_redraw
@@ -37,7 +37,7 @@ check_btn_callback:
     push rbp
     mov rbp, rsp
     sub rsp, 16
-    mov [rbp - 16], rdi  # store the check button pointer
+    mov [rbp - 16], rdi  // store the check button pointer
     mov rdi, container_ptr[rip]
     mov rsi, [rbp - 16]
     call Fl_Flex_remove
@@ -49,7 +49,7 @@ add_btn_callback:
     push rbp
     mov rbp, rsp
     sub rsp, 32
-    mov [rbp - 32], rsi  # store input widget pointer
+    mov [rbp - 32], rsi  // store input widget pointer
 .input_value:
     mov rdi, [rbp - 32]
     call Fl_Input_value
@@ -94,14 +94,14 @@ main:
     push rbp
     mov rbp, rsp
     sub rsp, 64
-    # store argc and argv
+    // store argc and argv
     push rdi
     push rsi
-    # window [rbp - 64]
-    # column [rbp - 48]
-    # row1   [rbp - 40]
-    # input  [rbp - 32]
-    # button [rbp - 24]
+    // window [rbp - 64]
+    // column [rbp - 48]
+    // row1   [rbp - 40]
+    // input  [rbp - 32]
+    // button [rbp - 24]
 .set_scheme:
     lea rdi, scheme[rip]
     call Fl_set_scheme
@@ -167,7 +167,7 @@ main:
     mov [rbp - 24], rax
 .set_button_color:
     mov rdi, [rbp - 24]
-    mov esi, 0x00FF0000      # Green color in 0xRRGGBBII format
+    mov esi, 0x00FF0000      // Green color in 0xRRGGBBII format
     call Fl_Button_set_label_color
 .set_button_callback:
     mov rdi, [rbp - 24]
