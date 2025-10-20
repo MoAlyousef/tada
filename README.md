@@ -5,5 +5,6 @@ Targets the System V AMD64 ABI (SysV calling convention).
 
 ## Building
 ```bash
-cmake -Bbin && cmake --build bin --parallel
+cmake -Bbin -DCMAKE_BUILD_TYPE=Release && cmake --build bin --parallel
+./bin/tada
 ```
