@@ -27,7 +27,4 @@ add_executable(tada)
 target_sources(tada PRIVATE
   src/main.S
 )
-set_target_properties(tada PROPERTIES
-  POSITION_INDEPENDENT_CODE ON
-)
 target_link_libraries(tada PRIVATE cfltk fltk::fltk fltk::gl fltk::images)
